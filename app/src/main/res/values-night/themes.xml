@@ -1,0 +1,9 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.SchoolTodo" parent="Theme.Material3.Dark">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowActionBar">true</item>
+        <item name="android:colorPrimary">@color/pink</item>
+        <item name="android:statusBarColor">@color/pink</item>
+    </style>
+</resources>
