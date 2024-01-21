@@ -12,7 +12,36 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class PlugViewModel extends ViewModel {
-    private PlugRepoImpl repo = new PlugRepoImpl();
+    private final PlugRepoImpl repo = new PlugRepoImpl();
+    private PlugEntity selectedPlug = null;
+    public boolean threadRunning = true;
+    private final Thread plugPoller = new Thread(new Runnable() {
+        @Override
+        public void run() {
+            while (threadRunning) {
+                try {
+                    repo.getPlugInfo(selectedPlug.address).enqueue(new Callback<PlugState>() {
+                        @Override
+                        public void onResponse(Call<PlugState> call, Response<PlugState> response) {
+                            _loading.postValue(false);
+                            _errorOccured.postValue(false);
+                            _plugInfo.postValue(response.body());
+                        }
+
+                        @Override
+                        public void onFailure(Call<PlugState> call, Throwable t) {
+                            _loading.postValue(false);
+                            _errorOccured.postValue(false);
+                        }
+                    });
+                    Thread.sleep(1000);
+                } catch (Exception e) {
+                    Log.d("INTERNET_ERROR", "АШЫБКА БЛИН!!!");
+                    _errorOccured.postValue(true);
+                }
+            }
+        }
+    });
 
     private MutableLiveData<PlugState> _plugInfo = new MutableLiveData<PlugState>(null);
     private MutableLiveData<Boolean> _errorOccured = new MutableLiveData<Boolean>(false);
@@ -51,34 +80,13 @@ public class PlugViewModel extends ViewModel {
         return repo.getPlugById(plugId).plugName;
     }
 
-    public void pollPlug(int plugId) {
-        PlugEntity plug = repo.getPlugById(plugId);
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                while (true) {
-                    try {
-                        repo.getPlugInfo(plug.address).enqueue(new Callback<PlugState>() {
-                            @Override
-                            public void onResponse(Call<PlugState> call, Response<PlugState> response) {
-                                _loading.postValue(false);
-                                _errorOccured.postValue(false);
-                                _plugInfo.postValue(response.body());
-                            }
-
-                            @Override
-                            public void onFailure(Call<PlugState> call, Throwable t) {
-                                _loading.postValue(false);
-                                _errorOccured.postValue(false);
-                            }
-                        });
-                        Thread.sleep(1000);
-                    } catch (Exception e) {
-                        Log.d("INTERNET_ERROR", e.getMessage());
-                        _errorOccured.postValue(true);
-                    }
-                }
-            }
-        }).start();
+    public void startPollPlug(int plugId) {
+        selectedPlug = repo.getPlugById(plugId);
+        threadRunning = true;
+        plugPoller.start();
+    }
+    public void endPollPlug() {
+        threadRunning = false;
+        plugPoller.interrupt();
     }
 }

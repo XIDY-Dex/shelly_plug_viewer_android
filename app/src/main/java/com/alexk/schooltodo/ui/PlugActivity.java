@@ -50,14 +50,26 @@ public class PlugActivity extends AppCompatActivity {
             }
         });
         viewModel.errorStatus().observe(this, errorStatus -> {
-            if(errorStatus == true) {
+            if(errorStatus) {
                 ShowErrorDialog();
             }
         });
         int plugId = (int) getIntent().getExtras().get("plugId");
         plugName.setText(viewModel.getPlugName(plugId));
         viewModel.getPlugInfo(plugId);
-        viewModel.pollPlug(plugId);
+        viewModel.startPollPlug(plugId);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        viewModel.endPollPlug();
+    }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        viewModel.endPollPlug();
     }
 
     private void ShowErrorDialog() {
