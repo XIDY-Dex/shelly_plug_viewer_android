@@ -1,4 +1,4 @@
-package com.alexk.schooltodo;
+package com.letigo.plug_viewer;
 
 import org.junit.Test;
 

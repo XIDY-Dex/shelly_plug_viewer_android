@@ -1,12 +1,12 @@
-package com.alexk.schooltodo;
+package com.letigo.plug_viewer;
 
 import android.app.Application;
 import android.widget.Toast;
 
 import androidx.room.Room;
 
-import com.alexk.schooltodo.data.api.PlugApi;
-import com.alexk.schooltodo.data.db.PlugDatabase;
+import com.letigo.plug_viewer.data.api.PlugApi;
+import com.letigo.plug_viewer.data.db.PlugDatabase;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

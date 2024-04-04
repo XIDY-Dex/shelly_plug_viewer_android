@@ -1,4 +1,4 @@
-package com.alexk.schooltodo.data.api;
+package com.letigo.plug_viewer.data.api;
 
 import java.util.ArrayList;
 

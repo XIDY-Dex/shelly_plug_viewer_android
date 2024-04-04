@@ -1,8 +1,7 @@
-package com.alexk.schooltodo.domain;
+package com.letigo.plug_viewer.domain;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.MenuInflater;
 import android.view.View;
@@ -14,9 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.alexk.schooltodo.R;
-import com.alexk.schooltodo.data.db.PlugEntity;
+import com.letigo.plug_viewer.data.db.PlugEntity;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class PlugListAdapter extends RecyclerView.Adapter<PlugListAdapter.ViewHolder> {

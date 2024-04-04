@@ -1,17 +1,16 @@
-package com.alexk.schooltodo.ui;
+package com.letigo.plug_viewer.ui;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.alexk.schooltodo.R;
-import com.alexk.schooltodo.domain.PlugViewModel;
+import com.letigo.plug_viewer.domain.PlugViewModel;
 import com.google.android.material.progressindicator.CircularProgressIndicator;
 
 public class PlugActivity extends AppCompatActivity {

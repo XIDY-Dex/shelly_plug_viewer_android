@@ -1,10 +1,10 @@
-package com.alexk.schooltodo.domain;
+package com.letigo.plug_viewer.domain;
 
-import com.alexk.schooltodo.PlugApp;
-import com.alexk.schooltodo.data.PlugRepo;
-import com.alexk.schooltodo.data.api.PlugState;
-import com.alexk.schooltodo.data.db.PlugEntity;
-import com.alexk.schooltodo.data.db.PlugsDao;
+import com.letigo.plug_viewer.PlugApp;
+import com.letigo.plug_viewer.data.PlugRepo;
+import com.letigo.plug_viewer.data.api.PlugState;
+import com.letigo.plug_viewer.data.db.PlugEntity;
+import com.letigo.plug_viewer.data.db.PlugsDao;
 
 import java.util.ArrayList;
 

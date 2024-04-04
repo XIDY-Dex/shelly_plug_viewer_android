@@ -1,7 +1,7 @@
-package com.alexk.schooltodo.data;
+package com.letigo.plug_viewer.data;
 
-import com.alexk.schooltodo.data.api.PlugState;
-import com.alexk.schooltodo.data.db.PlugEntity;
+import com.letigo.plug_viewer.data.api.PlugState;
+import com.letigo.plug_viewer.data.db.PlugEntity;
 
 import java.util.ArrayList;
 

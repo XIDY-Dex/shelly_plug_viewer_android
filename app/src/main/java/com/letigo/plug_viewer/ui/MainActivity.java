@@ -1,4 +1,4 @@
-package com.alexk.schooltodo.ui;
+package com.letigo.plug_viewer.ui;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -9,19 +9,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.ContextMenu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.TextView;
 
 import com.alexk.schooltodo.R;
-import com.alexk.schooltodo.data.db.PlugEntity;
-import com.alexk.schooltodo.domain.PlugListAdapter;
-import com.alexk.schooltodo.domain.PlugListViewModel;
+import com.letigo.plug_viewer.data.db.PlugEntity;
+import com.letigo.plug_viewer.domain.PlugListAdapter;
+import com.letigo.plug_viewer.domain.PlugListViewModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
 

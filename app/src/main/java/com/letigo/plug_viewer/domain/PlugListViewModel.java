@@ -1,11 +1,11 @@
-package com.alexk.schooltodo.domain;
+package com.letigo.plug_viewer.domain;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 
-import com.alexk.schooltodo.data.db.PlugEntity;
+import com.letigo.plug_viewer.data.db.PlugEntity;
 
 import java.util.ArrayList;
 

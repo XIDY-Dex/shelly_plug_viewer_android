@@ -1,4 +1,4 @@
-package com.alexk.schooltodo.data.db;
+package com.letigo.plug_viewer.data.db;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
@@ -21,3 +21,4 @@ public class PlugEntity {
 
 
 }
+

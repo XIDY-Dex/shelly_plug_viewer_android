@@ -1,4 +1,4 @@
-package com.alexk.schooltodo.data.api;
+package com.letigo.plug_viewer.data.api;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
